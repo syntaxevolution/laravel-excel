@@ -1,6 +1,4 @@
-## Laravel Excel v2.1.* for Laravel 5
-
-Looking for Laravel Excel for Laravel 4? Visit the [`1.3` branch](https://github.com/Maatwebsite/Laravel-Excel/tree/1.3)
+# Laravel Excel v2.1.* for Laravel 5, 6 and 7
 
 [<img src="http://www.maatwebsite.nl/img/excel_banner.jpg"/>](https://laravel-excel.maatwebsite.nl/)
 [<img src="https://cloud.githubusercontent.com/assets/7728097/6332170/1b495af2-bb84-11e4-9a93-34a9abc01840.jpg"/>](http://www.maatwebsite.nl/vacature-php-programmeur-maastricht)
@@ -44,7 +42,7 @@ Excel::create('Laravel Excel', function($excel) {
 Require this package in your `composer.json` and update composer. This will download the package and PHPExcel of PHPOffice.
 
 ```php
-composer require "maatwebsite/excel:~2.1.0"
+composer require "macellan/excel:dev-master"
 ```
 
 In Laravel 5.5 or higher, this package will be automatically discovered and you can safely skip the following two steps.
@@ -52,13 +50,13 @@ In Laravel 5.5 or higher, this package will be automatically discovered and you 
 If using Laravel 5.4 or lower, after updating composer, add the ServiceProvider to the providers array in `config/app.php`
 
 ```php
-Maatwebsite\Excel\ExcelServiceProvider::class,
+Macellan\Excel\ExcelServiceProvider::class,
 ```
 
 You can use the facade for shorter code; if using Laravel 5.4 or lower, add this to your aliases:
 
 ```php
-'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+'Excel' => Macellan\Excel\Facades\Excel::class,
 ```
 
 The class is bound to the ioC as `excel`
@@ -70,7 +68,7 @@ $excel = App::make('excel');
 To publish the config settings in Laravel 5 use:
 
 ```php
-php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
+php artisan vendor:publish --provider="Macellan\Excel\ExcelServiceProvider"
 ```
 
 This will add an `excel.php` config file to your config folder.

@@ -346,7 +346,7 @@ return array(
         */
 
         'registered' => [
-            'chunk' => 'Maatwebsite\Excel\Filters\ChunkReadFilter'
+            'chunk' => 'Macellan\Excel\Filters\ChunkReadFilter'
         ],
 
         /*
