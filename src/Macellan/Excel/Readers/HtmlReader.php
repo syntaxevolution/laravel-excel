@@ -95,11 +95,10 @@ class Html extends PHPExcel_Reader_HTML {
     /**
      * Loads PHPExcel from file
      *
-     * @param   string                                 $pFilename
-     * @param   boolean                                $isString
+     * @param string $pFilename
+     * @param boolean $isString
      * @param bool|LaravelExcelWorksheet|null|PHPExcel $obj
-     * @return PHPExcel|LaravelExcelWorksheet
-     *@throws PHPExcel_Reader_Exception
+     * @return LaravelExcelWorksheet|PHPExcel
      */
     public function load($pFilename, $isString = false, $obj = false)
     {
@@ -252,8 +251,8 @@ class Html extends PHPExcel_Reader_HTML {
      * @param string $row
      * @param integer $column
      * @param string $cellContent
+     * @param null $format
      * @return void
-     * @throws PHPExcel_Exception
      */
     protected function _processDomElement(DOMNode $element, $sheet, &$row, &$column, &$cellContent, $format = null)
     {
@@ -686,7 +685,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param integer $row
      * @param string $cellContent
      * @return void
-     * @throws PHPExcel_Exception
      */
     protected function flushCell($sheet, $column, $row, &$cellContent)
     {
@@ -720,7 +718,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param  string                $row
      * @param  integer               $column
      * @param                        $cellContent
-     * @throws PHPExcel_Exception
      * @return LaravelExcelWorksheet
      */
     protected function _processHeadings($child, $sheet, $row, $column, $cellContent)
@@ -743,7 +740,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param integer $row
      * @param string $attributes
      * @return void
-     * @throws PHPExcel_Exception
      */
     protected function insertImageBySrc($sheet, $column, $row, $attributes)
     {
@@ -824,7 +820,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param integer $spanWidth
      * @param                        $attributes
      * @return void
-     * @throws PHPExcel_Exception
      */
     protected function parseColSpan($sheet, $column, $row, $spanWidth, $attributes)
     {
@@ -865,7 +860,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param integer $spanHeight
      * @param                        $attributes
      * @return void
-     * @throws PHPExcel_Exception
      */
     protected function parseRowSpan($sheet, $column, $row, $spanHeight, $attributes)
     {
@@ -899,7 +893,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param integer $row
      * @param string $value
      * @return void
-     * @throws PHPExcel_Exception
      */
     protected function parseAlign($sheet, $column, $row, $value)
     {
@@ -939,7 +932,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param integer $row
      * @param string $value
      * @return void
-     * @throws PHPExcel_Exception
      */
     protected function parseValign($sheet, $column, $row, $value)
     {
@@ -1016,7 +1008,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param string $name
      * @param string $value
      * @return void
-     * @throws PHPExcel_Exception
      */
     protected function parseCssProperties($sheet, $column, $row, $name, $value)
     {
@@ -1345,7 +1336,6 @@ class Html extends PHPExcel_Reader_HTML {
      * @param $column
      * @param $row
      * @param $cellContent
-     * @throws PHPExcel_Exception
      * @return array
      */
     private function processMergedCells($sheet, &$column, $row, $cellContent)

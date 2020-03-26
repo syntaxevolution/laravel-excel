@@ -2,9 +2,6 @@
 
 use Closure;
 use Macellan\Excel\Readers\Batch;
-use Macellan\Excel\Classes\PHPExcel;
-use Macellan\Excel\Readers\LaravelExcelReader;
-use Macellan\Excel\Writers\LaravelExcelWriter;
 use Macellan\Excel\Exceptions\LaravelExcelException;
 
 /**
@@ -31,29 +28,29 @@ class Excel {
 
     /**
      * Excel object
-     * @var PHPExcel
+     * @var Classes\PHPExcel
      */
     protected $excel;
 
     /**
      * Reader object
-     * @var LaravelExcelReader
+     * @var Readers\LaravelExcelReader
      */
     protected $reader;
 
     /**
      * Writer object
-     * @var LaravelExcelWriter
+     * @var Writers\LaravelExcelWriter
      */
     protected $writer;
 
     /**
      * Construct Excel
-     * @param  PHPExcel           $excel
-     * @param  LaravelExcelReader $reader
-     * @param  LaravelExcelWriter $writer
+     * @param  Classes\PHPExcel           $excel
+     * @param  Readers\LaravelExcelReader $reader
+     * @param  Writers\LaravelExcelWriter $writer
      */
-    public function __construct(PHPExcel $excel, LaravelExcelReader $reader, LaravelExcelWriter $writer)
+    public function __construct(Classes\PHPExcel $excel, Readers\LaravelExcelReader $reader, Writers\LaravelExcelWriter $writer)
     {
         // Set Excel dependencies
         $this->excel = $excel;
@@ -65,7 +62,7 @@ class Excel {
      * Create a new file
      * @param                $filename
      * @param  callable|null $callback
-     * @return LaravelExcelWriter
+     * @return Writers\LaravelExcelWriter
      */
     public function create($filename, $callback = null)
     {
@@ -99,7 +96,7 @@ class Excel {
      * @param  string|null   $encoding
      * @param  bool          $noBasePath
      * @param  callback|null $callbackConfigReader
-     * @return LaravelExcelReader
+     * @return Readers\LaravelExcelReader
      */
     public function load($file, $callback = null, $encoding = null, $noBasePath = false, $callbackConfigReader = null)
     {
@@ -170,7 +167,7 @@ class Excel {
      * @param  string $view
      * @param  array  $data
      * @param  array  $mergeData
-     * @return LaravelExcelWriter
+     * @return Writers\LaravelExcelWriter
      */
     public function shareView($view, $data = [], $mergeData = [])
     {
@@ -182,7 +179,7 @@ class Excel {
      * @param  string $view
      * @param  array  $data
      * @param  array  $mergeData
-     * @return LaravelExcelWriter
+     * @return Writers\LaravelExcelWriter
      */
     public function loadView($view, $data = [], $mergeData = [])
     {
@@ -259,7 +256,6 @@ class Excel {
      * @param $method
      * @param $params
      * @return mixed
-     * @throws LaravelExcelException
      */
     public function __call($method, $params)
     {

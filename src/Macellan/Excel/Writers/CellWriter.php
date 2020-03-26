@@ -60,7 +60,6 @@ class CellWriter
      * Set cell url
      * @param [type] $url
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setUrl($url)
     {
@@ -78,7 +77,6 @@ class CellWriter
      * @param string $type
      * @param string $colorType
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setBackground($color, $type = 'solid', $colorType = 'rgb')
     {
@@ -90,7 +88,6 @@ class CellWriter
      * @param string $color
      * @param string $colorType
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setFontColor($color, $colorType = 'rgb')
     {
@@ -101,7 +98,6 @@ class CellWriter
      * Set the font
      * @param $styles
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setFont($styles)
     {
@@ -112,7 +108,6 @@ class CellWriter
      * Set font family
      * @param string $family
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setFontFamily($family)
     {
@@ -125,7 +120,6 @@ class CellWriter
      * Set font size
      * @param string $size
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setFontSize($size)
     {
@@ -138,7 +132,6 @@ class CellWriter
      * Set font weight
      * @param boolean|string $bold
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setFontWeight($bold = true)
     {
@@ -154,7 +147,6 @@ class CellWriter
      * @param bool|string $bottom
      * @param bool|string $left
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setBorder($top = 'none', $right = 'none', $bottom = 'none', $left = 'none')
     {
@@ -181,7 +173,6 @@ class CellWriter
      * Set the text rotation
      * @param $degrees
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setTextRotation($degrees)
     {
@@ -193,7 +184,6 @@ class CellWriter
      * Set the alignment
      * @param string $alignment
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setAlignment($alignment)
     {
@@ -206,7 +196,6 @@ class CellWriter
      * Set vertical alignment
      * @param string $alignment
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setValignment($alignment)
     {
@@ -219,7 +208,6 @@ class CellWriter
      * Set the text indent
      * @param integer $indent
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     public function setTextIndent($indent)
     {
@@ -234,7 +222,6 @@ class CellWriter
      * @param boolean $type
      * @param string $colorType
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     protected function setColorStyle($styleType, $color, $type = false, $colorType = 'rgb')
     {
@@ -252,7 +239,6 @@ class CellWriter
      * @param        $styleType
      * @param string $styles
      * @return  CellWriter
-     * @throws PHPExcel_Exception
      */
     protected function setStyle($styleType, $styles)
     {
@@ -270,7 +256,6 @@ class CellWriter
     /**
      * Get the cell style
      * @return PHPExcel_Style
-     * @throws PHPExcel_Exception
      */
     protected function getCellStyle()
     {

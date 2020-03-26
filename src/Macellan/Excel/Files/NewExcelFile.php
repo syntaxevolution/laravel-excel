@@ -2,7 +2,6 @@
 
 use Illuminate\Contracts\Foundation\Application;
 use Macellan\Excel\Excel;
-use Macellan\Excel\Exceptions\LaravelExcelException;
 use Macellan\Excel\Writers\LaravelExcelWriter;
 
 abstract class NewExcelFile extends File {
@@ -25,7 +24,6 @@ abstract class NewExcelFile extends File {
 
     /**
      * Start importing
-     * @throws LaravelExcelException
      */
     public function handleExport()
     {

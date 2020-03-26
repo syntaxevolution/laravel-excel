@@ -49,7 +49,6 @@ class ConfigReader {
      * @param PHPExcel $excel
      * @param string $config
      * @param callback $callback
-     * @throws PHPExcel_Exception
      */
     public function __construct(PHPExcel $excel, $config = 'excel.import', $callback = null)
     {
@@ -66,7 +65,6 @@ class ConfigReader {
     /**
      * Start the import
      * @param bool|callable $callback $callback
-     * @throws PHPExcel_Exception
      * @return void
      */
     public function start($callback = false)

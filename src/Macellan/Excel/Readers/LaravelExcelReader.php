@@ -309,7 +309,6 @@ class LaravelExcelReader
      * @param null $callback
      *
      * @return LaravelExcelWorksheet|PHPExcel_Worksheet
-     * @throws PHPExcel_Exception
      */
     public function sheet($sheetID, $callback = null)
     {
@@ -467,7 +466,6 @@ class LaravelExcelReader
      * @param callback|null $callback
      *
      * @return SheetCollection
-     * @throws PHPExcel_Exception
      */
     public function byConfig($config, $callback = null)
     {
@@ -922,7 +920,6 @@ class LaravelExcelReader
      *
      * @param PHPExcel_Cell_IValueBinder $binder
      * @return LaravelExcelReader
-     * @throws PHPExcel_Exception
      */
     public function setValueBinder(PHPExcel_Cell_IValueBinder $binder)
     {
@@ -934,8 +931,6 @@ class LaravelExcelReader
     /**
      * Reset the value binder back to default
      *
-     * @return LaravelExcelReader
-     * @throws PHPExcel_Exception
      */
     public function resetValueBinder()
     {
@@ -1252,7 +1247,6 @@ class LaravelExcelReader
      * Get total rows of file
      *
      * @return integer
-     * @throws LaravelExcelException
      */
     public function getTotalRowsOfFile()
     {
@@ -1267,7 +1261,6 @@ class LaravelExcelReader
      * Get sheet info for active sheet
      *
      * @return mixed
-     * @throws LaravelExcelException
      */
     public function getSheetInfoForActive()
     {
@@ -1306,7 +1299,6 @@ class LaravelExcelReader
      * @param callable|integer|string $sheetID
      *
      * @return PHPExcel_Worksheet
-     * @throws PHPExcel_Exception
      */
     protected function getSheetByIdOrName($sheetID)
     {
@@ -1379,7 +1371,6 @@ class LaravelExcelReader
      * Set the write format
      *
      * @return LaravelExcelReader
-     * @throws LaravelExcelException
      */
     protected function _setFormat()
     {
@@ -1409,7 +1400,6 @@ class LaravelExcelReader
      * Set the writer
      *
      * @return LaravelExcelReader
-     * @throws PHPExcel_Reader_Exception
      */
     protected function _setReader()
     {
@@ -1484,7 +1474,6 @@ class LaravelExcelReader
      * Reset the writer
      *
      * @return void
-     * @throws PHPExcel_Exception
      */
     public function _reset()
     {
@@ -1510,7 +1499,6 @@ class LaravelExcelReader
      * @param array $params
      *
      * @return mixed
-     * @throws LaravelExcelException
      */
     public function __call($method, $params)
     {

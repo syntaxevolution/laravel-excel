@@ -170,7 +170,6 @@ class ExcelParser {
     /**
      * Parse the worksheet
      * @return RowCollection
-     * @throws PHPExcel_Exception
      */
     protected function parseWorksheet()
     {
@@ -351,7 +350,6 @@ class ExcelParser {
     /**
      *  Parse the rows
      * @return RowCollection
-     * @throws PHPExcel_Exception
      */
     protected function parseRows()
     {
@@ -431,7 +429,6 @@ class ExcelParser {
     /**
      * Parse the cells of the given row
      * @return CellCollection
-     * @throws PHPExcel_Exception
      */
     protected function parseCells()
     {
@@ -529,7 +526,6 @@ class ExcelParser {
     /**
      * Get the calculated value
      * @return string
-     * @throws PHPExcel_Exception
      */
     protected function getCalculatedValue()
     {
@@ -577,8 +573,7 @@ class ExcelParser {
 
     /**
      * Parse and return carbon object or formatted time string
-     * @return Carbon\Carbon
-     * @throws PHPExcel_Exception
+     * @return \Carbon\Carbon
      */
     protected function parseDateAsCarbon()
     {
@@ -608,7 +603,6 @@ class ExcelParser {
     /**
      * Return date string
      * @return string
-     * @throws PHPExcel_Exception
      */
     protected function parseDateAsString()
     {
@@ -642,7 +636,8 @@ class ExcelParser {
 
     /**
      * Check if cells needs parsing
-     * @return array
+     * @param $index
+     * @return bool
      */
     protected function cellNeedsParsing($index)
     {
@@ -653,7 +648,6 @@ class ExcelParser {
     /**
      * Get the cell index from column
      * @return integer
-     * @throws PHPExcel_Exception
      */
     protected function getIndexFromColumn()
     {

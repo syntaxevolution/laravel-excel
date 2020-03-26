@@ -39,8 +39,6 @@ class FormatIdentifier {
      * Get the file format by file
      * @param $file
      * @return string $format
-     * @throws PHPExcel_Reader_Exception
-     * @throws LaravelExcelException
      */
     public function getFormatByFile($file)
     {
@@ -221,8 +219,6 @@ class FormatIdentifier {
      * @param bool $wrongFormat
      * @param string $ext
      * @return string $format
-     * @throws PHPExcel_Reader_Exception
-     * @throws LaravelExcelException
      */
     protected function lastResort($file, $wrongFormat = false, $ext = 'xls')
     {
@@ -243,7 +239,6 @@ class FormatIdentifier {
      * @param $format
      * @param $file
      * @return boolean
-     * @throws PHPExcel_Reader_Exception
      */
     protected function canRead($format, $file)
     {
@@ -261,7 +256,6 @@ class FormatIdentifier {
      * Init the reader based on the format
      * @param string $format
      * @return PHPExcel_Reader_IReader
-     * @throws PHPExcel_Reader_Exception
      */
     protected function initReader($format)
     {

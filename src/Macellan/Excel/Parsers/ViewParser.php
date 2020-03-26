@@ -39,7 +39,6 @@ class ViewParser {
     /**
      * Construct the view parser
      * @param Html $reader
-     * @return ViewParser
      */
     public function __construct(Html $reader)
     {
@@ -50,7 +49,6 @@ class ViewParser {
      * Parse the view
      * @param LaravelExcelWorksheet $sheet
      * @return LaravelExcelWorksheet
-     * @throws PHPExcel_Reader_Exception
      */
     public function parse($sheet)
     {
@@ -64,7 +62,6 @@ class ViewParser {
      * @param LaravelExcelWorksheet $sheet
      * @param string $html
      * @return LaravelExcelWorksheet
-     * @throws PHPExcel_Reader_Exception
      */
     protected function _loadHTML($sheet, $html)
     {

@@ -38,7 +38,6 @@ abstract class File {
     /**
      * Handle the import/export of the file
      * @param $type
-     * @throws LaravelExcelException
      * @return mixed
      */
     public function handle($type)
@@ -55,7 +54,6 @@ abstract class File {
      * @param $type
      * @return mixed
      * @throws BindingResolutionException
-     * @throws LaravelExcelException
      */
     protected function getHandler($type)
     {
@@ -77,7 +75,6 @@ abstract class File {
      * Get the handler class name
      * @param $type
      * @return string
-     * @throws LaravelExcelException
      */
     protected function getHandlerClassName($type)
     {

@@ -1,17 +1,14 @@
 <?php namespace Macellan\Excel\Writers;
 
 use Carbon\Carbon;
+use Macellan\Excel\Classes\FormatIdentifier;
 use Macellan\Excel\Parsers\ViewParser;
 use PHPExcel;
-use PHPExcel_Exception;
 use PHPExcel_IOFactory;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Response;
-use Macellan\Excel\Classes\FormatIdentifier;
 use Macellan\Excel\Classes\LaravelExcelWorksheet;
 use Macellan\Excel\Exceptions\LaravelExcelException;
-use PHPExcel_Reader_Exception;
-use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 /**
  *
@@ -221,7 +218,6 @@ class LaravelExcelWriter {
      * @param string $title
      * @param callback|null $callback
      * @return  LaravelExcelWriter
-     * @throws PHPExcel_Exception
      */
     public function sheet($title, $callback = null)
     {
@@ -269,7 +265,6 @@ class LaravelExcelWriter {
      * Export the spreadsheet
      * @param string $ext
      * @param array  $headers
-     * @throws LaravelExcelException
      */
     public function export($ext = 'xls', Array $headers = [])
     {
@@ -301,7 +296,6 @@ class LaravelExcelWriter {
      * Convert and existing file to newly requested extension
      * @param       $ext
      * @param array $headers
-     * @throws LaravelExcelException
      */
     public function convert($ext, Array $headers = [])
     {
@@ -312,7 +306,6 @@ class LaravelExcelWriter {
      * Export and download the spreadsheet
      * @param string $ext
      * @param array $headers
-     * @throws LaravelExcelException
      */
     public function download($ext = 'xls', Array $headers = [])
     {
@@ -323,7 +316,6 @@ class LaravelExcelWriter {
      * Return the spreadsheet file as a string
      * @param  string $ext
      * @return string
-     * @throws LaravelExcelException
      */
     public function string($ext = 'xls')
     {
@@ -348,7 +340,6 @@ class LaravelExcelWriter {
     /**
      * Download a file
      * @param array $headers
-     * @throws LaravelExcelException
      */
     protected function _download(Array $headers = [])
     {
@@ -389,7 +380,6 @@ class LaravelExcelWriter {
      * @param boolean $path
      * @param boolean $returnInfo
      * @return LaravelExcelWriter|array
-     * @throws LaravelExcelException
      */
     public function store($ext = 'xls', $path = false, $returnInfo = false)
     {
@@ -441,7 +431,6 @@ class LaravelExcelWriter {
      * @param bool|str $path The save path
      * @param bool $returnInfo
      * @return LaravelExcelWriter
-     * @throws LaravelExcelException
      */
     public function save($ext = 'xls', $path = false, $returnInfo = false)
     {
@@ -451,9 +440,6 @@ class LaravelExcelWriter {
     /**
      * Start render of a new spreadsheet
      * @return void
-     * @throws LaravelExcelException
-     * @throws PHPExcel_Exception
-     * @throws PHPExcel_Reader_Exception
      */
     protected function _render()
     {
@@ -528,7 +514,6 @@ class LaravelExcelWriter {
      * Set the active sheet index
      * @param integer $index
      * @return LaravelExcelWriter
-     * @throws PHPExcel_Exception
      */
     public function setActiveSheetIndex($index)
     {
@@ -574,7 +559,6 @@ class LaravelExcelWriter {
     /**
      * Set the writer
      * @return object|\PHPExcel_Writer_IWriter
-     * @throws PHPExcel_Reader_Exception
      */
     protected function _setWriter()
     {
@@ -634,12 +618,12 @@ class LaravelExcelWriter {
             throw new \Exception("{$driver} could not be found. Make sure you've included it in your composer.json");
     }
 
+
     /**
-     * Set the headers
-     * @param $headers
-     * @throws LaravelExcelException
+     * @param array $headers
+     * @param array $default
      */
-    protected function _setHeaders(Array $headers = [], Array $default)
+    protected function _setHeaders(array $headers = [], array $default)
     {
         if (headers_sent()) throw new LaravelExcelException('[ERROR]: Headers already sent');
 
@@ -656,7 +640,6 @@ class LaravelExcelWriter {
      * Set the storage path
      * @param bool $path
      * @return  void
-     * @throws LaravelExcelException
      */
     protected function _setStoragePath($path = false)
     {
@@ -689,7 +672,6 @@ class LaravelExcelWriter {
      * Dynamically call methods
      * @param  string $method
      * @param  array  $params
-     * @throws LaravelExcelException
      * @return LaravelExcelWriter
      */
     public function __call($method, $params)

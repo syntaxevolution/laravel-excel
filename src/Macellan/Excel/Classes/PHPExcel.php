@@ -37,7 +37,6 @@ class PHPExcel extends PHPOffice_PHPExcel {
      *
      * @param  int|null   $iSheetIndex Index where sheet should go (0,1,..., or null for last)
      * @param bool|string $title
-     * @throws PHPExcel_Exception
      * @return LaravelExcelWorksheet
      */
     public function createSheet($iSheetIndex = null, $title = false)

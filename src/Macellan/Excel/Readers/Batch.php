@@ -45,7 +45,6 @@ class Batch {
      * @param array $files
      * @param Closure $callback
      * @return Excel
-     * @throws LaravelExcelException
      */
     public function start(Excel $excel, $files, Closure $callback)
     {
@@ -84,7 +83,6 @@ class Batch {
     /**
      * Set the batch files
      * @param array|string $files
-     * @throws LaravelExcelException
      * @return void
      */
     protected function _setFiles($files)

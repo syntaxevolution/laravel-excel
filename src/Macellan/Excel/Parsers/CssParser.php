@@ -46,6 +46,8 @@ class CssParser {
 
     /**
      * Transform the found css to inline styles
+     * @param $html
+     * @return string
      */
     public function transformCssToInlineStyles($html)
     {

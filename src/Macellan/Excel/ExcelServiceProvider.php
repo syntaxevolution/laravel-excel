@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\Response;
 use Macellan\Excel\Parsers\CssParser;
 use Macellan\Excel\Parsers\ViewParser;
 use Macellan\Excel\Classes\FormatIdentifier;
-use Macellan\Excel\Readers\LaravelExcelReader;
-use Macellan\Excel\Writers\LaravelExcelWriter;
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 use Laravel\Lumen\Application as LumenApplication;
 
@@ -137,7 +135,7 @@ class ExcelServiceProvider extends ServiceProvider {
         // Bind the laravel excel reader
         $this->app->singleton('excel.reader', function ($app)
         {
-            return new LaravelExcelReader(
+            return new Readers\LaravelExcelReader(
                 $app['files'],
                 $app['excel.identifier'],
                 $app['Illuminate\Contracts\Bus\Dispatcher']
@@ -177,7 +175,7 @@ class ExcelServiceProvider extends ServiceProvider {
         // Bind the excel writer
         $this->app->singleton('excel.writer', function ($app)
         {
-            return new LaravelExcelWriter(
+            return new Writers\LaravelExcelWriter(
                 $app->make(Response::class),
                 $app['files'],
                 $app['excel.identifier']
