@@ -1,4 +1,4 @@
-# Laravel Excel v2.1.* for Laravel 5.x, 6.x, 7.x and 8.x
+# Laravel Excel v2.3.* for Laravel 5.x, 6.x, 7.x and 8.x
 
 Laravel Excel brings the power of PHPOffice's PHPExcel to Laravel 5 with a touch of the Laravel Magic. It includes features like: importing Excel and CSV to collections, exporting models, array's and views to Excel, importing batches of files and importing a file by a config file.
 
