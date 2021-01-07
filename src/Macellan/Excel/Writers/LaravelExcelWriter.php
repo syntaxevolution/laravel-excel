@@ -623,8 +623,10 @@ class LaravelExcelWriter {
      * @param array $headers
      * @param array $default
      */
-    protected function _setHeaders(array $headers = [], array $default)
+    protected function _setHeaders(array $headers, array $default)
     {
+        $headers = count($headers) > 0 ? $headers : [];
+
         if (headers_sent()) throw new LaravelExcelException('[ERROR]: Headers already sent');
 
         // Merge the default headers with the overruled headers
